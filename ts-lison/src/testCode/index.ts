@@ -1,3 +1,5 @@
 // import './基础类型'
 // import './Es6-Symbol'
-import './接口(interface)'
+// import './接口(interface)'
+// import './函数'
+import './泛型'

@@ -1,13 +1,5 @@
-// const getFullName = ({ firstName, lastName }) => {
-//   return `${firstName} ${lastName}`
-// }
-// getFullName({
-//   firstName: 'haha',
-//   lastName: 'lili'
-// })
-
 // 1、一般写法
-//#region 
+//#region
 interface NameInfo {
   firstName: string,
   lastName: string
@@ -20,7 +12,7 @@ getFullName({
   firstName: '123',
   lastName: '111'
 })
-//#endregion 
+//#endregion
 
 // 2、可选属性  color?: string,
 // #region
@@ -38,7 +30,7 @@ const getVegetable = ({ color, type }: Vegetable) => {
 // console.log(getVegetable({
 //   type: '2',
 // }));
-//#endregion 
+//#endregion
 
 // 3、多余参数
 // #region
@@ -84,3 +76,51 @@ interface ArrInter {
 }
 let list: ArrInter = [1, '2'];
 // list[1] = '11'
+type AddFunc = (num1: number, num2: number) => number;
+const add: AddFunc = (n1, n2) => n1 + n2;
+
+// interface RoleDic {
+//   [id: number]: string
+// }
+// const role: RoleDic = {
+//   1: 's',
+// }
+interface RoleDic {
+  [id: string]: string
+}
+const role: RoleDic = {
+  1: 's',
+}
+
+// 5 接口继承
+interface Vegetables {
+  color: string
+}
+interface Tomato extends Vegetables {
+  radius: string
+}
+interface Carrot {
+  length: number
+}
+const tomato: Tomato = {
+  radius: '1',
+  color: '2'
+}
+const carrot: Carrot = {
+  length: 1
+}
+
+interface Counter {
+  (): void,
+  count: number
+}
+const getCounter = (): Counter => {
+  const c = () => { c.count++ }
+  c.count = 0
+  return c
+}
+const counter: Counter = getCounter()
+counter()
+console.log(counter.count);
+
+
