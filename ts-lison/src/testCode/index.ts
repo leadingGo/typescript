@@ -2,4 +2,6 @@
 // import './Es6-Symbol'
 // import './接口(interface)'
 // import './函数'
-import './泛型'
+// import './泛型'
+// import './Class-1.js'
+import './Class-2.js'
